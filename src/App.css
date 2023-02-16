@@ -1,38 +1,23 @@
-.App {
-  text-align: center;
+/* body {
+  background:linear-gradient(0deg, rgba(255, 0, 150, 0.3), rgba(255, 0, 150, 0.3)), url("https://res.cloudinary.com/debkwdctz/image/upload/v1676501386/School%20Project%20Images/morning_urlcrh.png");
+  object-fit: cover;
+  transition: 0.4s ease-out;
+  background-color: #cccccc;
+ } */
+
+ html {
+  min-height:100%;
+  background:linear-gradient(to bottom, rgba(0, 0, 0, 0.422),rgba(0, 0, 0, 0.512)), url(https://res.cloudinary.com/debkwdctz/image/upload/v1676501386/School%20Project%20Images/morning_urlcrh.png);
+  background-size:cover;
+  transition: 0.4s ease-out;
+  background-color: #121212;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.developer{
+  color: #98aaa6ac;
+  font-weight: 600;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.developer a {
+  color: #98AAA6;
 }
