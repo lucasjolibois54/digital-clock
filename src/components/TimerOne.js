@@ -1,5 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
+import { Link, Outlet } from 'react-router-dom'
 import Confetti from 'react-confetti'
 
 function TimerOne() {
@@ -26,7 +27,7 @@ function TimerOne() {
   
   return (
     <div className=''>
-                  <p className='bottom-5 absolute mb-2 right-5 developer mt-10 italic font-normal mr-10'>Developed by <a className='underline text-gray-500 italic font-normal' href='https://www.lucasjolibois.com/' target="_blank" rel="noreferrer">Lucas Jolibois</a></p>
+        <p className='bottom-5 absolute mb-2 right-5 developer mt-10 italic font-normal mr-10'>Visit the:{" "}<Link to="/second-timer" className='underline text-gray-500 italic font-normal'>Class Component version</Link></p>
 
          {activate ? (               
         <div/>
@@ -61,6 +62,7 @@ function TimerOne() {
         </div>
     </div>
         </div>
+        <Outlet/>
     </div>
   )
 }
