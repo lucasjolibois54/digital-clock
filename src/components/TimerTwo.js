@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 
 
 export default class TimerTwo extends Component {
-
     constructor(props) {
         super(props);
         this.state = {date: new Date().toLocaleTimeString()};
@@ -44,7 +43,7 @@ export default class TimerTwo extends Component {
       render(){
         return (
           <div>
-            <p>Current Date And Time : {this.state.date}</p>
+            <p>Current Time : {this.state.date}</p>
           </div>
         );
       }
