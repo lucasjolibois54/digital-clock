@@ -2,25 +2,53 @@ import React, { Component } from 'react'
 
 
 export default class TimerTwo extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {date: new Date().toLocaleTimeString()};
+      }
     
-    state={
-        time : new Date(),
+      componentDidMount() {
+        this.timerID = setInterval(
+          () => this.tick(),
+          1000
+        );
+      }
+    
+      componentWillUnmount() {
+        clearInterval(this.timerID);
+      }
+    
+      tick() {
+        this.setState({
+          date: new Date().toLocaleTimeString()
+        });
+      }
+    
+    /*state={
+        time : new Date().toLocaleTimeString("en-US"),
       }
 
 
       componentDidMount() {
-        this.interval = setInterval(() => Date(), 1000);
+        this.timerID = setInterval(
+          () => this.tick(),
+          1000
+        );
       }
     
       componentWillUnmount() {
-        clearInterval(this.interval);
-      }
+        clearInterval(this.timerID);
+      }*/
       
       render(){
         return (
-          <div className="App">
-            <p>Current Time : {this.state.time.toLocaleTimeString("en-US")}</p>
+          <div>
+            <p>Current Date And Time : {this.state.date}</p>
           </div>
         );
       }
     }
+
+
+
