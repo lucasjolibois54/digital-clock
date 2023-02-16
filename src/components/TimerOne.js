@@ -23,22 +23,28 @@ function TimerOne() {
   const [activate, setActivate] =useState(true)
 
 
-
-
-  
-
   
   return (
-    <div>
-        {activate ? (               
+    <div className=''>
+                  <p className='bottom-5 absolute mb-2 right-5 developer mt-10 italic font-normal mr-10'>Developed by <a className='underline text-gray-500 italic font-normal' href='https://www.lucasjolibois.com/' target="_blank" rel="noreferrer">Lucas Jolibois</a></p>
+
+         {activate ? (               
         <div/>
       ) : (                   
-        <Confetti tweenDuration="20" recycle="false" numberOfPieces="700"/>
+        <Confetti tweenDuration="20" recycle="false" numberOfPieces="500"/>
+      )} 
+        <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center'>
+        
+        {toggle ? (               
+        <h1 className='text-5xl sm:text-7xl font-semibold text-gray-200'>{time}</h1>
+      ) : (                   
+      <div className='flex justify-center -mb-10 -mt-32'><img src='https://s3.amazonaws.com/cartoonsmartstreaming/wp-content/uploads/2014/12/02202248/BlueBird.gif' alt='No Time Shown Gif'/></div>
       )}
-            
-        <p><b>made using:</b> useState, useEffect, ternary operators</p>
 
-        <div  onClick={() => setActivate(!activate)} >
+    <p className=' text-gray-300'><b>Made using:</b> useState, useEffect, ternary operators</p>
+
+    <div className='flex justify-center space-x-5'>
+        <div className='border-blue-400 text-blue-400 border-2 w-40 py-1 mt-4 rounded-lg'  onClick={() => setActivate(!activate)} >
         {activate ? (               
         <button>Show Surprise</button>
       ) : (                   
@@ -46,18 +52,15 @@ function TimerOne() {
       )}
         </div>
 
-        <div  onClick={() => setToggle(!toggle)} >
+        <div className='border-blue-400 text-blue-400 border-2 w-40 py-1 mt-4 rounded-lg'   onClick={() => setToggle(!toggle)} >
         {toggle ? (               
-        <button>Hide</button>
+        <button>Hide Time</button>
       ) : (                   
-        <button>Show</button>
+        <button>Show Time</button>
       )}
         </div>
-        {toggle ? (               
-        <h1>{time}</h1>
-      ) : (                   
-      <div/>
-      )}
+    </div>
+        </div>
     </div>
   )
 }
