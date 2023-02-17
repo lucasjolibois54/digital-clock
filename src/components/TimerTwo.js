@@ -5,7 +5,7 @@ import Confetti from 'react-confetti'
 export default class TimerTwo extends Component {
   constructor(props) {
     super(props);
-    this.state = { date: new Date().toLocaleTimeString(),
+    this.state = { date: new Date().toLocaleTimeString("en-US"),
     showTime: true, 
     showConfet: false};
   }
@@ -34,7 +34,7 @@ export default class TimerTwo extends Component {
 
   tick() {
     this.setState({
-      date: new Date().toLocaleTimeString(),
+      date: new Date().toLocaleTimeString("en-US"),
     });
   }
 
