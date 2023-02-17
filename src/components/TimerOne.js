@@ -39,7 +39,8 @@ function TimerOne() {
         {toggle ? (               
         <h1 className='text-5xl sm:text-7xl font-semibold text-gray-200'>{time}</h1>
       ) : (                   
-      <div className='flex justify-center -mb-10 -mt-32'><img src='https://s3.amazonaws.com/cartoonsmartstreaming/wp-content/uploads/2014/12/02202248/BlueBird.gif' alt='No Time Shown Gif'/></div>
+      //<div className='flex justify-center -mb-10 -mt-32'><img src='https://s3.amazonaws.com/cartoonsmartstreaming/wp-content/uploads/2014/12/02202248/BlueBird.gif' alt='No Time Shown Gif'/></div>
+      <div/>
       )}
 
     <p className=' text-gray-300'><b>Made using:</b> useState, useEffect, ternary operators</p>
