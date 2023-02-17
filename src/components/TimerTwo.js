@@ -1,11 +1,19 @@
 import React, { Component } from "react";
 import { Link, Outlet } from "react-router-dom";
+import Confetti from 'react-confetti'
 
 export default class TimerTwo extends Component {
   constructor(props) {
     super(props);
     this.state = { date: new Date().toLocaleTimeString(),
-    showTime: true, };
+    showTime: true, 
+    showConfet: false};
+  }
+
+  toggleConfet = () => {
+    this.setState(prevState => ({
+      showConfet: !prevState.showConfet
+    }));
   }
 
 
@@ -47,9 +55,10 @@ export default class TimerTwo extends Component {
       }*/
 
   render() {
-    const { showTime } = this.state;
+    const { showTime, showConfet } = this.state;
     return (
       <div>
+        {showConfet && (<Confetti  tweenDuration="20" recycle="false" numberOfPieces="500"/> )}
         <p className="bottom-5 absolute mb-2 right-5 developer mt-10 italic font-normal mr-10">
           Visit the:{" "}
           <Link to="/" className="underline text-gray-500 italic font-normal">
@@ -65,9 +74,14 @@ export default class TimerTwo extends Component {
             <b>Made using:</b> Constructor, ComponentDidMount,
             ComponentDidUnmount, render
           </p>
+          <div className='flex justify-center space-x-5'>
+          <button className='border-blue-400 text-blue-400 border-2 w-40 py-1 mt-4 rounded-lg' onClick={this.toggleConfet}>
+              {showConfet ? 'Hide Confetti' : 'Show Confetti'}
+            </button>
           <button className='border-blue-400 text-blue-400 border-2 w-40 py-1 mt-4 rounded-lg' onClick={this.toggleTime}>
               {showTime ? 'Hide Time' : 'Show Time'}
             </button>
+            </div>
         </div>
         <Outlet />
       </div>
